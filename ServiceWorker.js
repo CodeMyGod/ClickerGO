@@ -5,7 +5,6 @@ const contentToCache = [
     "Build/ClickerGO.data",
     "Build/ClickerGO.wasm",
     "TemplateData/style.css"
-
 ];
 
 self.addEventListener('install', function (e) {
@@ -31,3 +30,18 @@ self.addEventListener('fetch', function (e) {
       return response;
     })());
 });
+
+// Функція для перевірки наявності оновлень гри
+async function checkForUpdates() {
+    const response = await fetch('path/to/version.txt');
+    const serverVersion = await response.text();
+    const localVersion = localStorage.getItem('gameVersion');
+    if (serverVersion !== localVersion) {
+        // Перезавантажити гру, якщо є нова версія
+        location.reload();
+        localStorage.setItem('gameVersion', serverVersion);
+    }
+}
+
+// Перевірка на оновлення кожні 5 хвилин (300000 мілісекунд)
+setInterval(checkForUpdates, 300000);
