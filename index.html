@@ -21,8 +21,8 @@
     </div>
     <script>
       window.addEventListener("load", function () {
-        if ("serviceWorker1" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker1.js");
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
         }
       });
 
@@ -63,7 +63,7 @@
         frameworkUrl: buildUrl + "/ClickerGO.framework.js",
         codeUrl: buildUrl + "/ClickerGO.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
+        companyName: "GameHub",
         productName: "Clicker",
         productVersion: "2.0",
         showBanner: unityShowBanner,

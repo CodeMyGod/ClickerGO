@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-Clicker-2.0";
+const cacheName = "GameHub-Clicker-2.0";
 const contentToCache = [
     "Build/ClickerGO.loader.js",
     "Build/ClickerGO.framework.js",
